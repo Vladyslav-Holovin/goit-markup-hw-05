@@ -815,8 +815,15 @@ input::placeholder {
   margin-top: 16px;
 }
 
-.modal-submit-button {
+.modal-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.modal-submit-button {
   width: 169px;
   border-radius: 4px;
   padding: 16px 32px;
