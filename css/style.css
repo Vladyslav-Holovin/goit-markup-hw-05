@@ -644,6 +644,7 @@ img {
   background-color: #fcfcfc;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 
 .close {
@@ -652,21 +653,25 @@ img {
   right: 24px;
   width: 24px;
   height: 24px;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: #e7e9fc;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close:hover,
 .close:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .close-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -682,11 +687,10 @@ img {
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
-  margin: 72px 24px 0px 24px;
+  margin-bottom: 16px;
 }
 
 .modal-form {
-  padding: 16px 24px;
 }
 
 .modal-field {
@@ -695,7 +699,7 @@ img {
 
 .modal-label {
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   display: block;
@@ -717,17 +721,17 @@ input::placeholder {
   width: 100%;
   outline: transparent;
   background-color: transparent;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding-left: 38px;
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-input:focus,
 .modal-text:focus {
-  border: 1px solid #4d5ae5;
+  border-color: #4d5ae5;
 }
 
 .modal-input:focus + .modal-icon {
@@ -754,12 +758,13 @@ input::placeholder {
   width: 100%;
   outline: transparent;
   background-color: transparent;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 8px 16px;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+  resize: none;
 }
 
 .modal-text::placeholder {
@@ -767,15 +772,17 @@ input::placeholder {
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  resize: none;
+}
+
+.message-field {
+  margin-bottom: 16px;
 }
 
 .check-text {
   display: flex;
   align-items: center;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
@@ -789,42 +796,38 @@ input::placeholder {
 }
 
 .check-text-holder {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   margin-right: 8px;
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-check:checked + .check-text .check-text-holder {
   background-color: #404bbf;
-  border: 1px solid #404bbf;
-  fill: #ffffff;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .modal-check-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .modal-checkbox {
-  margin-top: 16px;
-}
-
-.modal-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 0;
+  margin-bottom: 24px;
 }
 
 .modal-submit-button {
-  width: 169px;
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  margin: 0 auto;
   border-radius: 4px;
   padding: 16px 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -833,6 +836,8 @@ input::placeholder {
   line-height: 1.5;
   letter-spacing: 0.04em;
   text-align: center;
+  cursor: pointer;
+  border: none;
   color: #fff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
